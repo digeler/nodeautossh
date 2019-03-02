@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sshaccess
+  labels:
+    purpose: ssh-login
+spec:
+  containers:
+  - name: ssh
+    image: dinorg/sshaccess
+    command: ["/app/ssh"]
+    args: [{{ .Values.sub }}, {{ .Values.rg }}, {{ .Values.token }} ,{{ .Values.newssh }} ,{{ .Values.location }}]
+  restartPolicy: OnFailure

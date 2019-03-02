@@ -1,0 +1,3 @@
+check the pod log for the status.
+now copy your private key to this pod using kubectl cp private podname:/home/ 
+now you can safely connect to each node.
